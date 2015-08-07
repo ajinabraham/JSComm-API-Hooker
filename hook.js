@@ -39,7 +39,7 @@ var JSCOMMAPIs =
             try{
                 if(arguments){
                 var url='';
-                if (arguments[1].indexOf("://") === -1)
+                if (String(arguments[1]).indexOf("://") === -1)
                 {
                     url= window.location.href;
                     if (arguments[1].startsWith('/')){
