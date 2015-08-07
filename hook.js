@@ -152,8 +152,9 @@ var JSCOMMAPIs =
      //POSTMESSAGE API
      var p_msg=postMessage;
      postMessage=function(){
-        console.log("postMessage");
-        return p_msg.apply(this,arguments);
+        console.log("postMessage API Called!");
+        console.log("Message: "+ arguments[0]);
+        return p_msg.apply(this,[].slice.call(arguments));
      };
 
 //Function Ends
