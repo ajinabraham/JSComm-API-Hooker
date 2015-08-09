@@ -156,8 +156,10 @@ var JSCOMMAPIs =
         console.log("Message: "+ arguments[0]);
         return p_msg.apply(this,[].slice.call(arguments));
      };
+     
+     //Loggin Message
 	window.addEvent('message',function(event) {
-			console.log('Message DATA --->:  ',event.event.data);
+			console.log('FROM: '+ event.origin + ' MESSAGE: ', event.event.data);
 		});
 
 //Function Ends
