@@ -155,16 +155,23 @@ var JSCOMMAPIs =
         return new_ws;
      };
      //POSTMESSAGE API
-     var p_msg=postMessage;
-     postMessage=function(){
+     var p_msg=window.parent.postMessage;
+     window.parent.postMessage=function(){
         console.log("postMessage API Called!");
         console.log("Message: "+ arguments[0]);
         return p_msg.apply(this,[].slice.call(arguments));
      };
-     
+     //http://www.javascripture.com/MessageEvent
      //Logging Message Event
 	window.addEvent('message',function(event) {
-		JSCOMMAPIs.mLOG('Message Event\nFROM: '+ event.origin + '\nMESSAGE: ' + String(event.event.data));
+        var x=event.event.data;
+        if (typeof(event.event.data)==='object'){
+            data=JSON.stringify(x);
+        }
+        else{
+            data=x;
+        }
+		JSCOMMAPIs.mLOG('Message Event\nFROM: '+ event.origin + '\nMESSAGE: ' + data);
 		});
 
 //Function Ends
