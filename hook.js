@@ -164,7 +164,7 @@ var JSCOMMAPIs =
      
      //Logging Message Event
 	window.addEvent('message',function(event) {
-		JSCOMMAPIs.mLOG('Message Event\nFROM: '+ event.origin + ' MESSAGE: ' + event.event.data);
+		JSCOMMAPIs.mLOG('Message Event\nFROM: '+ event.origin + ' MESSAGE: ' + event.data);
 		});
 
 //Function Ends
