@@ -156,6 +156,9 @@ var JSCOMMAPIs =
         console.log("Message: "+ arguments[0]);
         return p_msg.apply(this,[].slice.call(arguments));
      };
+	window.addEvent('message',function(event) {
+			console.log('Message DATA --->:  ',event.event.data);
+		});
 
 //Function Ends
     })();
