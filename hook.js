@@ -20,10 +20,15 @@ var JSCOMMAPIs =
     {
         console.log('%c'+ data, 'background: #feca13; color: #FFF');
     },
+    mLOG:function(data) //MESSAGE EVENT
+    {
+        console.log('%c'+ data, 'background: #FFD700; color: #0000');
+    },
     eLOG:function(data) //ERROR
     {
         console.log('%c'+ data, 'background: #fa113d; color: #FFF');
     },
+    
 	Hooks:function()
 	{
     var c =0; //XHR Counter
@@ -157,9 +162,9 @@ var JSCOMMAPIs =
         return p_msg.apply(this,[].slice.call(arguments));
      };
      
-     //Loggin Message
+     //Logging Message Event
 	window.addEvent('message',function(event) {
-			console.log('FROM: '+ event.origin + ' MESSAGE: ', event.event.data);
+		JSCOMMAPIs.mLOG('Message Event\nFROM: '+ event.origin + ' MESSAGE: ' + event.event.data);
 		});
 
 //Function Ends
